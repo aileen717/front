@@ -13,6 +13,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.pink[50],
       appBar: AppBar(
         title: Text(
             'User Profile',
