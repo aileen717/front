@@ -25,7 +25,6 @@ class _LoginState extends State<Login> {
                 'Welcome Back!',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
-                  letterSpacing: 2.0,
                   fontSize: 24.0,
                 ),
               ),

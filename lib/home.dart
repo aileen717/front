@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Colors.pink[500],
+        backgroundColor: Colors.pink,
         centerTitle: true,
       ),
       body: Padding(
@@ -140,8 +140,7 @@ class _HomeState extends State<Home> {
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      letterSpacing: 2.0,
-                      fontSize: 15.0,
+                      fontSize: 20.0,
                     ),
                   ),
                   style: ButtonStyle(

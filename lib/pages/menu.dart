@@ -25,7 +25,12 @@ class _MenuState extends State<Menu> {
       appBar: AppBar(
         backgroundColor: Colors.pink,
         foregroundColor: Colors.white,
-        title: Text("Menu"),
+        title: Text("Menu",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         centerTitle: true,
       ),
       body: Padding(
