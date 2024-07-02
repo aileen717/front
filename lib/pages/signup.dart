@@ -130,30 +130,30 @@ class _SignupState extends State<Signup> {
                             foregroundColor: Colors.white,
                         ),
                     ),
-                    //SizedBox(height: 30.0,),
-                    // Row(
-                    //   children: [
-                    //    Expanded(
-                    //        child: Divider(
-                    //          color: Colors.orange[900],
-                    //        ),
-                    //     ),
-                    //     SizedBox(width: 5.0,),
-                    //     Text(
-                    //       'Or Login with',
-                    //       style: TextStyle(
-                    //         color: Colors.black,
-                    //         fontSize: 15.0,
-                    //       ),
-                    //     ),
-                    //     SizedBox(width: 5.0,),
-                    //     Expanded(
-                    //       child: Divider(
-                    //         color: Colors.pink,
-                    //       ),
-                    //     ),
-                    //   ],
-                    // ),
+                    SizedBox(height: 30.0,),
+                    Row(
+                      children: [
+                       Expanded(
+                           child: Divider(
+                             color: Colors.orange[900],
+                           ),
+                        ),
+                        SizedBox(width: 5.0,),
+                        Text(
+                          'Or Login with',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15.0,
+                          ),
+                        ),
+                        SizedBox(width: 5.0,),
+                        Expanded(
+                          child: Divider(
+                            color: Colors.pink,
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
