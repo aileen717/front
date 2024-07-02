@@ -19,7 +19,7 @@ class _SignupState extends State<Signup> {
       backgroundColor: Colors.pink[50],
       body: SafeArea(
         child: Padding (
-          padding: EdgeInsets.fromLTRB(15.0, 50.0, 10.0, 0),
+          padding: EdgeInsets.fromLTRB(40.0, 200.0, 40.0, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget> [
@@ -27,7 +27,6 @@ class _SignupState extends State<Signup> {
                 'Let`s Get Started!',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
-                  letterSpacing: 2.0,
                   fontSize: 24.0,
                 ),
               ),
@@ -40,6 +39,8 @@ class _SignupState extends State<Signup> {
                     TextFormField(
                       maxLength: 50,
                       decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        filled: true,
                         label: Text('Full Name'),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20.0),
@@ -58,10 +59,12 @@ class _SignupState extends State<Signup> {
                         name = value!;
                       }
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(height: 15,),
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        filled: true,
                         label: Text('Email'),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20.0),
@@ -80,10 +83,13 @@ class _SignupState extends State<Signup> {
                           email = value!;
                         }
                     ),
-                    SizedBox(height: 33,),
+                    SizedBox(height: 35,),
                     TextFormField(
+                        maxLength:20,
                       obscureText: true,
                       decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        filled: true,
                         label: Text('Password',),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20.0),
@@ -105,7 +111,7 @@ class _SignupState extends State<Signup> {
                           password = value!;
                         }
                     ),
-                    SizedBox(height: 30,),
+                    SizedBox(height: 15.0,),
                     ElevatedButton(onPressed: (){
                       if(formKey.currentState!.validate()){
                         formKey.currentState!.save();
@@ -114,12 +120,40 @@ class _SignupState extends State<Signup> {
                         print(password);
                       }
                     },
-                        child: Text('Sign up'),
+                        child: Text('Sign up',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                          ),
+                        ),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.pink,
                             foregroundColor: Colors.white,
                         ),
                     ),
+                    //SizedBox(height: 30.0,),
+                    // Row(
+                    //   children: [
+                    //    Expanded(
+                    //        child: Divider(
+                    //          color: Colors.orange[900],
+                    //        ),
+                    //     ),
+                    //     SizedBox(width: 5.0,),
+                    //     Text(
+                    //       'Or Login with',
+                    //       style: TextStyle(
+                    //         color: Colors.black,
+                    //         fontSize: 15.0,
+                    //       ),
+                    //     ),
+                    //     SizedBox(width: 5.0,),
+                    //     Expanded(
+                    //       child: Divider(
+                    //         color: Colors.pink,
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
                   ],
                 ),
               ),
