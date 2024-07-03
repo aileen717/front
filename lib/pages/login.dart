@@ -17,7 +17,7 @@ class _LoginState extends State<Login> {
       backgroundColor: Colors.pink[50],
       body: SafeArea(
         child: Padding (
-          padding: EdgeInsets.fromLTRB(40.0, 200.0, 40.0, 0),
+          padding: EdgeInsets.fromLTRB(40.0, 50.0, 40.0, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget> [
@@ -116,7 +116,7 @@ class _LoginState extends State<Login> {
                           onTap: ()=> Navigator.popAndPushNamed(context, '/signup'),
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),

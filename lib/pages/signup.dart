@@ -19,7 +19,7 @@ class _SignupState extends State<Signup> {
       backgroundColor: Colors.pink[50],
       body: SafeArea(
         child: Padding (
-          padding: EdgeInsets.fromLTRB(40.0, 200.0, 40.0, 0),
+          padding: EdgeInsets.fromLTRB(40.0, 50.0, 40.0, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget> [
@@ -129,30 +129,6 @@ class _SignupState extends State<Signup> {
                             backgroundColor: Colors.pink,
                             foregroundColor: Colors.white,
                         ),
-                    ),
-                    SizedBox(height: 30.0,),
-                    Row(
-                      children: [
-                       Expanded(
-                           child: Divider(
-                             color: Colors.orange[900],
-                           ),
-                        ),
-                        SizedBox(width: 5.0,),
-                        Text(
-                          'Or Login with',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 15.0,
-                          ),
-                        ),
-                        SizedBox(width: 5.0,),
-                        Expanded(
-                          child: Divider(
-                            color: Colors.pink,
-                          ),
-                        ),
-                      ],
                     ),
                   ],
                 ),
