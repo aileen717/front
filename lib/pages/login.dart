@@ -81,6 +81,7 @@ class _LoginState extends State<Login> {
                         formKey.currentState!.save();
                         print(email);
                         print(password);
+                        Navigator.pushReplacementNamed(context, '/');
                       }
                     },
                       child: Text('Log in',
@@ -88,6 +89,7 @@ class _LoginState extends State<Login> {
                         fontSize: 20.0,
                         ),
                       ),
+
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.pink,
                         foregroundColor: Colors.white,
