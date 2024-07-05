@@ -12,49 +12,54 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.pink[50],
-      body: Container(
-        child: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              ElevatedButton(
-                onPressed: (){
-                  Navigator.pushNamed(context, '/menu');
-                },
-                child: Text('Go to Menu',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20.0,
-                  ),
-                ),
-                style: ButtonStyle(
-                  backgroundColor: WidgetStateProperty.all(
-                    Colors.pink,
-                  ),
-                ),
-              ),
-              ElevatedButton(
-                onPressed: (){
-                  Navigator.pushNamed(context, '/profile');
-                },
-                child: Text("Go to Profile",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20.0,
-                  ),
-                ),
-                style: ButtonStyle(
-                  backgroundColor: WidgetStateProperty.all(
-                    Colors.pink,
-                  ),
-                ),
-              ),
-            ],
+      appBar: AppBar(
+        backgroundColor: Colors.pink,
+        foregroundColor: Colors.white,
+        title: Text("Dashboard",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
           ),
         ),
+        centerTitle: true,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+       elevation: 3.0,
+       onTap: (int val){
+         switch (val){
+           case 0:
+             Navigator.pushNamed(context, '/');
+                 break;
+           case 1:
+             Navigator.pushNamed(context, '/menu');
+             break;
+           case 2:
+             Navigator.pushNamed(context, '/profile');
+             break;
+         }
+       },
+        currentIndex: 0,
+        selectedItemColor: Colors.indigo[900],
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home,
+                color: Colors.pink,
+              ),
+              label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.book,
+              color: Colors.pink,
+            ),
+            label: 'Books',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person,
+              color: Colors.pink,
+            ),
+            label: 'Profile',
+          ),
+        ],
       ),
     );
   }
