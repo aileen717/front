@@ -1,7 +1,8 @@
 import 'dart:convert';
 
-import 'package:appkctechast/services/product.dart';
+import 'package:appkctechast/pages/selectedProduct.dart';
 import 'package:flutter/material.dart';
+import 'package:appkctechast/services/Product.dart';
 import 'package:appkctechast/services/menuCard.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -84,7 +85,12 @@ class _MenuState extends State<Menu> {
                         )
                       ],
                     ),
-                        onTap: (){},
+                        onTap: (){
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => SelectedProduct(product: products[index]),
+                          )
+                        );
+                      },
                      ),
                     );
                   }

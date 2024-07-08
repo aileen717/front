@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:appkctechast/services/product.dart';
+import 'package:appkctechast/services/Product.dart';
 
 class Menucard extends StatelessWidget {
   final Product product;
