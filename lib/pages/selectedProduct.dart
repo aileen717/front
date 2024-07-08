@@ -6,10 +6,21 @@ class SelectedProduct extends StatefulWidget {
   const SelectedProduct({super.key, required this.product});
 
   @override
-  State<SelectedProduct> createState() => _SelectedProductState();
+  State<SelectedProduct> createState() => _SelectedProductState(product: product);
 }
 
 class _SelectedProductState extends State<SelectedProduct> {
+  final Product product;
+  late double totalAmount;
+  int numberOfOrders = 1;
+  _SelectedProductState({required this.product});
+
+  @override
+  void initState() {
+    super.initState();
+    totalAmount = product.price;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,22 +41,70 @@ class _SelectedProductState extends State<SelectedProduct> {
         children: [
           Column(
             children: [
-              Text(widget.product.productName),
-              Text(widget.product.description),
+              Text(widget.product.productName,
+                style: TextStyle(
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.bold
+                ),
+              ),
+              Text(widget.product.description,
+                style: TextStyle(
+                    fontSize: 20.0
+                ),
+              ),
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(widget.product.price.toString()),
+              Text(
+                  '₱ ${totalAmount.toString()}',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.pink,
+                        fontWeight: FontWeight.bold
+                ),
+              ),
               Row(
                 children: [
-                  IconButton(onPressed: (){},
-                      icon: Icons.remove
+                  IconButton(onPressed: (){
+                    setState(() {
+                      if(numberOfOrders > 1){
+                        numberOfOrders -= 1;
+                        totalAmount = product.price * numberOfOrders;
+                        }
+                      });
+                  },
+                      icon: Icon(Icons.remove,
+                        size: 18.0,
+                      ),
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStatePropertyAll(Colors.pink[100])
+                    ),
+                  ),
+                  Text(
+                    numberOfOrders.toString(),
+                    style: TextStyle(
+                      fontSize: 18.0,
+                    ),
+                  ),
+                  IconButton(onPressed: (){
+                    setState(() {
+                      numberOfOrders += 1;
+                      totalAmount = product.price * numberOfOrders;
+                    });
+                  },
+                      icon: Icon(Icons.add,
+                        size: 18.0,
+                      ),
+                    style: ButtonStyle(
+                        backgroundColor: WidgetStatePropertyAll(Colors.pink[100])
+                    ),
                   ),
                 ],
-              )
+              ),
             ],
-          )
+          ),
         ],
       ),
     );
