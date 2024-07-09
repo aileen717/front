@@ -15,6 +15,8 @@ class _SignupState extends State<Signup> {
   String name = '';
   String email = '';
   String password = '';
+  bool _obscure = true;
+  IconData _obscureIcon = Icons.visibility_off;
 
   createAccount(User user) async{
     final response = await http.post (
@@ -104,8 +106,21 @@ class _SignupState extends State<Signup> {
                     SizedBox(height: 35,),
                     TextFormField(
                         maxLength:20,
-                      obscureText: true,
+                      obscureText: _obscure,
                       decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                          icon: Icon(_obscureIcon),
+                          onPressed: (){
+                            setState(() {
+                              _obscure = !_obscure;
+                              if(_obscure){
+                                _obscureIcon = Icons.visibility_off;
+                              } else{
+                                _obscureIcon = Icons.visibility;
+                              }
+                            });
+                          },
+                        ),
                         fillColor: Colors.white,
                         filled: true,
                         label: Text('Password',),
