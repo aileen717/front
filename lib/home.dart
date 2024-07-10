@@ -23,6 +23,7 @@ class _HomeState extends State<Home> {
           ),
         ),
         backgroundColor: Colors.pink,
+        foregroundColor: Colors.white,
         centerTitle: true,
       ),
       body: Padding(

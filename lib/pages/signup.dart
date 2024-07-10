@@ -30,7 +30,6 @@ class _SignupState extends State<Signup> {
         'password': user.password,
       }),
     );
-    print(response.body);
   }
 
   @override
@@ -149,7 +148,7 @@ class _SignupState extends State<Signup> {
                       if(formKey.currentState!.validate()){
                         formKey.currentState!.save();
                         User user = User(
-                          username: name,
+                          username: '',
                           email: email,
                           password: password
                         );
