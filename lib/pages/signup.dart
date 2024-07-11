@@ -35,6 +35,7 @@ class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.pink[50],
       body: SafeArea(
         child: Padding (
@@ -47,6 +48,14 @@ class _SignupState extends State<Signup> {
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 24.0,
+                ),
+              ),
+              SizedBox(height: 10.0,),
+              Center(
+                child: CircleAvatar(
+                  child: Image.asset('assets/logo.png',),
+                  radius: 75.0,
+                  backgroundColor: Colors.pink[50],
                 ),
               ),
               SizedBox(height: 30.0,),

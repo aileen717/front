@@ -39,8 +39,6 @@ class _LoginState extends State<Login> {
       return true;
     }
     return false;
-
-   // print(response.body);
   }
 
   @override
@@ -58,6 +56,14 @@ class _LoginState extends State<Login> {
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 24.0,
+                ),
+              ),
+              SizedBox(height: 10.0,),
+              Center(
+                child: CircleAvatar(
+                  child: Image.asset('assets/logo.png',),
+                  radius: 75.0,
+                  backgroundColor: Colors.pink[50],
                 ),
               ),
               SizedBox(height: 30.0,),
@@ -147,7 +153,7 @@ class _LoginState extends State<Login> {
                                 }
                             );
                           });
-                          Navigator.pushReplacementNamed(context, '/');
+                          Navigator.popAndPushNamed(context, '/');
                         }
                       });
                     },
