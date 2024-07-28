@@ -1,26 +1,17 @@
+import 'package:appkctechast/pages/login.dart';
+import 'package:appkctechast/pages/signup.dart';
+import 'package:appkctechast/home.dart';
+import 'package:appkctechast/pages/dashboard.dart';
+import 'package:appkctechast/pages/menu.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home:Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text('KC Tech'),
-        ),
-        backgroundColor: Colors.pink,
-      ),
-        body: Center(
-          child: Image.network('https://aebc975c.rocketcdn.me/wp-content/uploads/2020/12/plage.jpg'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.pink,
-        child: Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
-      ),
-    ),
-  ));
-}
-
+void main() => runApp(MaterialApp(
+  initialRoute: '/login',
+   routes: {
+       '/' : (context) => Dashboard(),
+       '/menu' : (context) => Menu(),
+       '/profile' : (context) => Home(),
+       '/signup' : (context) => Signup(),
+       '/login' : (context) => Login(),
+   },
+));
